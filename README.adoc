@@ -1,0 +1,50 @@
+= Tablature Organizer
+This Python script organizes music tablature files by moving them into artist-specific folders.
+
+== Features
+- Automatically moves tablature files from the input directory into artist-named folders in the output directory.
+- Supports filenames in the format: `Artist - Song.ext`
+- Handles special formatting for artists whose names start with "The" (e.g., `The Beatles` becomes `Beatles, The`).
+- Appends a timestamp to file names if a file already exists in the target folder.
+
+== Installation
+Ensure you have Python 3 installed.
+
+Install dependencies using pip:
+
+[source,shell]
+----
+pip install click
+----
+
+== Usage
+Run the script from the command line using the following command:
+
+[source,shell]
+----
+python organize_tabs.py --input="<input_folder>" --output="<output_folder>"
+----
+
+
+Example:
+[source,shell]
+----
+py organize_tabs.py --input="./tabs" --output="./organized_tabs"
+----
+
+
+== Filename Requirements
+Files must follow this naming convention:
+
+[source,shell]
+----
+Artist - Song.ext
+----
+
+
+== Logging
+- Info-level logging is enabled to track file moves and renames.
+- Warnings are displayed for filenames that don't match the expected format.
+
+== License
+MIT License
